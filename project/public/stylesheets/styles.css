@@ -1,0 +1,101 @@
+.none {
+	display: none;
+}
+
+span {
+	cursor: default;
+}
+
+input#sub {
+	height: 18px;
+	font-size: 12px;
+	box-shadow: none;
+	outline: none;
+	border: none;
+}
+
+div.search input {
+	margin-left: -15px;
+}
+
+.search-suggestions {
+	display: none;
+}
+
+.categories {
+	text-align: center;
+	margin-right: -1px;
+}
+
+.categories span {
+	border: solid 1px grey;
+	font-weight: bold;
+}
+
+.friends {
+	color: green;
+}
+
+.family {
+	color: orange;
+}
+
+.work {
+	color: purple;
+}
+
+.red {
+	background-color: red;
+}
+
+h4 {
+	text-align: center;
+}
+
+.upper-margin {
+	height: 100px;
+}
+
+.book {
+	border: solid 1px gray;
+	height: 200px;
+	overflow: auto;
+	padding-top: 10px;
+}
+
+.card {
+	margin-bottom: 10px;
+}
+
+#name {
+	font-size: 20px;
+	border-bottom: solid 2px red;
+}
+
+.modal-body {
+	height: 500px;
+}
+
+#map-body {
+	height: 300px;
+}
+
+#phone_number {
+	/*border-top: solid 2px red;*/
+	border-bottom: solid 1px blue;
+	margin-top: -50px;
+}
+
+#address {
+	border-bottom: solid 1px blue;
+	margin-top: -30px;
+}
+
+#age {
+	margin-top: -10px;
+	border-bottom: solid 2px blue;
+}
+
+.disappears {
+	display: none;
+}

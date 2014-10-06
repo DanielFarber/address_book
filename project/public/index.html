@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+
+	<link rel="stylesheet" type="text/css" href="stylesheets/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="stylesheets/bootstrap_theme.css">
+	<link rel="stylesheet" type="text/css" href="stylesheets/jquery-ui.css">
+	<link rel="stylesheet" type="text/css" href="stylesheets/styles.css">
+
+	<script type="text/template" id="script-template">
+			<% var cats = [0, "friends", "family", "work"] %>
+			<div class="row card <%= cats[category_id] %>">
+			<span id="name" class="col-md-9" name="<%= name %>"><%= name %>  <span id="delete">x</span></span>
+			<span id="pic" class="disappears col-md-2"><img src="<%= picture %>"></span>
+			<span id="phone_number" class="disappears col-md-9"><%= phone_number %></span>
+			<span id="address" class="disappears col-md-9"><%= address %></span>
+			<span id="age" class="disappears col-md-12">Age: <%= age %></span>
+		</div>
+	</script>
+	<script type="text/javascript" src="javascsripts/jquery.js"></script>
+	<script type="text/javascript" src="javascsripts/bootstrap.js"></script>
+	<script type="text/javascript" src="javascsripts/underscore.js"></script>
+	<script type="text/javascript" src="javascsripts/backbone.js"></script>
+	<script type="text/javascript" src="javascsripts/jquery-ui.js"></script>
+	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD2cbRqSmMdgLPExYSf-TwneYwlZjtbyqg"></script>	
+	<script type="text/javascript" src="javascsripts/scripts.js"></script>
+
+</head>
+<body>
+	<div class="new-contact">
+		<input type="text" name="name" placeholder="Name"/>
+		<input type="text" name="address" placeholder="Street"/>
+		<input type="text" name="phone_number" placeholder="Phone Number"/>
+		<input type="text" name="age" placeholder="Age"/>
+		<select name="category" required>
+			<option disabled>Category</option>
+			<option index="1" name="Friends">Friends</option>
+			<option index="2" name="Family">Family</option>
+			<option index="3" name="Work">Work</option>
+		</select>
+		<button class="add">Add!</button>
+	</div>
+	<div class="container">
+		<div class="upper-margin"></div>
+		<div class="categories">
+			<span class="friends col-md-2 col-md-offset-3">Friends</span>
+			<span class="family col-md-2">Family</span>
+			<span class="work col-md-2">Work</span>
+		</div>
+		<div class="col-md-6 col-md-offset-3 book"></div>
+		<div class="search col-md-4 col-md-offset-3"><input type="text" placeholder="Search for a contact"></div>
+		<div class="search_suggestions col-md-offset-3"></div>
+		<button class="btn btn-primary btn-lg col-md-offset-3" data-toggle="modal" data-target="#myModal">
+			Contacts of the World
+		</button>
+
+	</div>
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+					<h4 class="modal-title" id="myModalLabel">Contacts of the World</h4>
+				</div>
+				<div class="modal-body">
+					<div id="map-body"></div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

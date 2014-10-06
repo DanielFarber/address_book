@@ -1,0 +1,37 @@
+h4 {
+	text-align: center;
+}
+
+.upper-margin {
+	height: 100px;
+}
+
+.book {
+	border: solid 1px gray;
+}
+
+
+.name {
+	font-size: 20px;
+}
+
+.pic {
+}
+
+.phone_number {
+	border-top: solid 2px red;
+	border-bottom: solid 1px blue;
+	margin-top: -50px;
+}
+
+.address {
+	border-bottom: solid 1px blue;
+}
+
+.address1 {
+	margin-top: -30px;
+}
+
+.address2 {
+	margin-top: -10px;
+}
