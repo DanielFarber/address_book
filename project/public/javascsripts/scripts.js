@@ -148,12 +148,15 @@ $(function() {
 	$("div.search input").keyup(searchExecute)
 
 	function searchExecute(feed) {
+		$("div.contact").css("display", "block")
 		var term = feed.target.value
 		$("div.contact").find("#name").each(function(i){
 			if (this.attributes.name.value.toLowerCase().substr(0, term.length) == term.toLowerCase()) {
-				$(this).parent().removeClass("none")
+				$(this).parent().css("display", "block")
+				// $(this).parent().removeClass("none")
 			}
-			else {$(this).parent().addClass("none")}
+			else {$(this).parent().css("display", "none")}
+			// else {$(this).parent().addClass("none")}
 		})
 	}
 
@@ -213,7 +216,6 @@ $(function() {
 						title: name,
 					})
 					marker.setMap(map)
-					debugger
 				})
 			})			
 		}
