@@ -189,11 +189,34 @@ $(function() {
 
 	function initializeMap() {
 		var mapOptions = {
-			center: {lat: 39.8282, lng: -98.5795},
-			zoom: 5,
+			center: {lat: 51.8282, lng: -120.5795},
+			zoom: 4
 		}
 		var map = new google.maps.Map(document.querySelector("#map-body"), mapOptions)
 
+		$('#myModal').on('shown.bs.modal', function () {
+			google.maps.event.trigger(map, "resize");
+		});
+
+		$(".btn").click(addMarkers)
+
+		var names = []
+
+		function addMarkers(feed) {
+			$(".card").each(function(i) {
+				var address = $(this).find("#address").text().split(" ").join("+")
+				var name = $(this).find("#name").text().split("  x")[0]
+				$.get((gmap + address + key), function(){
+					var position = arguments[2].responseJSON.results[0].geometry.location
+					var marker = new google.maps.Marker({
+						position: {lat: position.lat, lng: position.lng},
+						title: name,
+					})
+					marker.setMap(map)
+					debugger
+				})
+			})			
+		}
 	}
 
 	initializeMap()
@@ -211,17 +234,3 @@ function getPoints(place) {
 	var targ = place.split(" ").join("+")
 	$.get((gmap + targ + key), function(){jsons.push(arguments[2].responseJSON.results[0].geometry.location)})
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
