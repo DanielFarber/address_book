@@ -163,8 +163,10 @@ $(function() {
 	$(".categories span").click(modifyCategoryDisplay)
 
 	function modifyCategoryDisplay(feed) {
-		var targetedClass = feed.target.attributes.class.value.split(" ")[0]
-		$("div." + targetedClass).toggle()
+		if ($("#search").val() == "") {
+			var targetedClass = feed.target.attributes.class.value.split(" ")[0]
+			$("div." + targetedClass).toggle()
+		}
 	}
 
 	function assignNewCategory(feed) {
